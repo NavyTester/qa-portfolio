@@ -15,9 +15,11 @@ Postman REST API JSON HTTP
 - Duplicate email scenarios
 
 ## Project Structure
+```text
 gorest-api/
 ├── README.md
 └── GoREST_API_Testing.postman_collection.json
+```
 
 
 ## How to Use
