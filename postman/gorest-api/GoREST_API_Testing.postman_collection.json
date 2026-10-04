@@ -1,0 +1,644 @@
+{
+  "info": {
+    "name": "GoREST API Testing",
+    "description": "Learning collection: manual GET and POST API test scenarios. Replace access_token with your own token in a private environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST",
+      "item": [
+        {
+          "name": "POST_valid_user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_gender_female",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"female\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_gender_missing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_status_missing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\"\r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_status_null",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": null \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_status_empty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_status_inactive",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"inactive\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_gender_null",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": null, \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_gender_empty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_gender_other",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"Test User\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"other\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_name_201chars",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_name_missing",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_name_null",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": null, \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_name_empty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": " { \"name\": \"\", \r\n \"email\": \"test_{{$randomUUID}}@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{access_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST_email_duplicat",
+          "item": [
+            {
+              "name": "POST_email_user_with_same_email",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "https://gorest.co.in/public/v2/users"
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": " { \"name\": \"Test User2\", \r\n \"email\": \"qa.student@example.com\", \r\n \"gender\": \"female\", \r\n \"status\": \"inactive\" \r\n } \r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST_email_first_user",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "https://gorest.co.in/public/v2/users"
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": " { \"name\": \"Test User\", \r\n \"email\": \"qa.student@example.com\", \r\n \"gender\": \"male\", \r\n \"status\": \"active\" \r\n } \r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GET",
+      "item": [
+        {
+          "name": "GET_gender_male",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users?gender=male",
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "disabled": false,
+                  "description": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET_page_out_of_range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users?gender=male&page=145",
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "disabled": false,
+                  "description": ""
+                },
+                {
+                  "key": "page",
+                  "value": "145",
+                  "disabled": false,
+                  "description": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET_page_1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users?gender=male&page=1",
+              "query": [
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "disabled": false,
+                  "description": ""
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": false,
+                  "description": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET_Valid user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
