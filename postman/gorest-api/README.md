@@ -11,6 +11,7 @@ Test Coverage
 - Boundary value testing
 - Pagination and filtering
 - Duplicate email scenarios
+
 Project Structure
 gorest-api/
 - README.md
