@@ -13,8 +13,8 @@ Test Coverage
 - Duplicate email scenarios
 Project Structure
 gorest-api/
-├── README.md
-└── GoREST_API_Testing.postman_collection.json
+- README.md
+- GoREST_API_Testing.postman_collection.json
 
 
 How to Use
