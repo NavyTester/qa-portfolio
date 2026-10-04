@@ -16,8 +16,8 @@ Postman REST API JSON HTTP
 
 ## Project Structure
 gorest-api/
-- README.md
-- GoREST_API_Testing.postman_collection.json
+├── README.md
+└── GoREST_API_Testing.postman_collection.json
 
 
 ## How to Use
